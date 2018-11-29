@@ -66,22 +66,32 @@ v2
 [46] 1.11202106 0.50063955
 ```
 
-#data frame
+## Task 2
+### Створити фрейм (data frame) y командою y <- data.frame(a = rnorm(100), b = 1:100, cc = sample(letters, 100, replace = TRUE)). 
 y <- data.frame(a = rnorm(100), b= 1:100, cc = sample(letters, 100, replace = TRUE))
 y
 
-#print last 10 elements of data frame
+### Для цього data frame виведіть: 
+* останні 10 строк;
+```{r}
 tail(y, 10)
+```
 
-
-#print 10-20 elements from data frame
+* строки з 10 по 20 включно; 
+```{r}
 y[10:20,]
+```
 
-#print the 10th element
+* 10-й елемент
+```{r}
 y[10,]
+```
 
-#print column cc using column name
+* повністю стовпець cc, при цьому використайте ім’я стовпця.
+```{r}
 subset(y, select=cc)
+```
+
 
 
 #create vector with 1, 2, 3, NA, 4, NA, 5, NA
