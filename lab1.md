@@ -12,12 +12,20 @@ class(ch)
 ```{r}
 #numeric
 num <- 3
+[1] "numeric"
 ```
-#integer
-int <- 1L
 
-#complex
+* Integer
+```{r}
+int <- 1L
+[1] "integer"
+```
+
+* Complex
+```{r}
 compl <-1+4i
+[1] "complex"
+```
 
 #logical
 bool <- TRUE
