@@ -73,13 +73,15 @@ m
 [2,]    1   NA    3
 ```
 
-```{r}
+
 *  task 4 test with removeNA = FALSE
+```{r}
 columnmean(m, FALSE)
 [1]  1 NA  3
 ```
-```{r}
+
 * task 4 test with removeNA = TRUE (default)
+```{r}
 columnmean(m)
 1] 1 2 3
 ```
