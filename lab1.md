@@ -2,82 +2,88 @@
 ## Task1
 ### Створити змінні базових (atomic) типів.
 
-* Text
+* Character
 ```{r}
 ch <- "text"
 class(ch)
 [1] "character"
 ```
 
-* Numeric
+ * Numeric
 ```{r}
-num <- 3
-[1] "numeric"
+ n <-1.0
+ class(n)
+ [1] "numeric"
+ ```
+ * Integer
+ ```{r}
+ i <- 1L;
+ class(i)
+ [1] "integer"
+ ```
+ 
+ * Complex
+ ```{r}
+ compl <- as.complex(2+2i)
+ class(compl)
+ [1] "complex"
+ ```
+ 
+ * Logical
+ ```{r}
+ logical <- TRUE;
+ class(logical)
+ [1] "logical"
+ ```
+* Створити вектори, які: містить послідовність з 5 до 75; містить числа 3.14,
+* 2.71, 0, 13; 100 значень TRUE.
+ ```{r}
+v_1<-5:75
+v_1
+[1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+[34] 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70
+[67] 71 72 73 74 75
+
+v_2<-c(3.14, 2.71, 0, 13)
+v_2
+[1]  3.14  2.71  0.00 13.00
+
+v_3<-as.logical(c(1:100))
+v_3
+[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[21] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[41] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[61] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[81] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
 ```
 
-* Integer
-```{r}
-int <- 1L
-[1] "integer"
-```
+m <- rbind(c(0.5, 1.3, 3.5), c(3.9, 131,2.8), c(0, 2.2,4.6), c(2,7,5.1))
 
-* Complex
-```{r}
-compl <-1+4i
-[1] "complex"
-```
+list<- list(ch,n, i, compl, logical)
+           
+f<- factor(c("baby", "child", "adult"),)
+f
 
-* Logical
-```{r}
-bool <- TRUE
-[1] "logical"
-```
-
-* Vector with range from 5 to 75
-vec <- 5:75
-
-
-#vector with 3.14,2.71, 0, 13
-vec <- c(3.14, 2.71, 0, 13)
-
-
-#vector with 100 of TRUEs
-vec <-rep(TRUE, 100)
-
-
-#matrix with rbind of matrix and 2 vectors
-new_f <- rbind(
-            matrix(
-                c(0.5, 1.3, 3.5, 3.9, 131, 2.8),
-                nrow = 2,
-                ncol = 3,
-                byrow = TRUE
-            ), 
-            c(0, 2.2, 4.6), 
-            c(2, 7, 5.1)
-          )
-
-#list of elements of all basic data types (used variables from above)
-lst <- list(char, num, int, compl, bool)
-
-#factor with levels baby, child, adult
-fact <- factor(c("baby", "baby", "child", "adult", "child"))
-
-vec <-  c(1, 2, 3, 4, "NA", 6, 7, "NA", 9, "NA",11)
-#get 1st index of "NA"
-match(c("NA"), vec)
-
-#get number of occurences of "NA"
-a <-table(factor(vec))
-a[names(a)=="NA"]
-
-#create dataframe
-dtf <- data.frame(
-    "ID" = 1:5, 
-    "FIRST_NAME" = c("Dora", "Denis", "Kate","John","Alex"), 
-    "AGE" = c(21, 22, 23, 24, 25))
-
-#change dataframe column name (by name)
-colnames(dtf)[(names(dtf) == "FIRST_NAME")] <- "Name"
-
-
+na_l <-list( 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)
+  counter_na <- function(x){
+    c<- 0;
+    p<- -1;
+    index <-0
+    for(item in x){
+      index<- index+1
+      if(is.na(item)){
+        c <- c+1
+        if(p == -1)
+          p<- index
+      }
+        
+    }
+    
+    
+    c(c,p)## перший аргумент кількість, другий позиція першого
+  }
+  counter_na(na_l)
+  
+  
+  df <- data.frame(c_1 = 1:4, c_2 = c(T, T, F, F)) 
+  names(df)[1] <- 'New name 1 col'
