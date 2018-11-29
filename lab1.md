@@ -10,7 +10,6 @@ class(ch)
 
 * Numeric
 ```{r}
-#numeric
 num <- 3
 [1] "numeric"
 ```
