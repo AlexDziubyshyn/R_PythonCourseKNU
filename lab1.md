@@ -1,5 +1,8 @@
-#character
-char <- "KNU"
+```{r}
+ch <- "text"
+class(ch)
+[1] "character"
+```
 
 #numeric
 num <- 3
