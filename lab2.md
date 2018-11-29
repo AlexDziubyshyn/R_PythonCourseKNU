@@ -219,16 +219,34 @@ subset(y, select=cc)
 ```
 
 
-
-#create vector with 1, 2, 3, NA, 4, NA, 5, NA
+## Task 3
+### Створити вектор z з елементами 1, 2, 3, NA, 4, NA, 5, NA. 
+```{r}
 v2 <- c(1, 2, 3, NA, 4, NA, 5, NA)
+v2
+[1]  1  2  3 NA  4 NA  5 NA
+```
 
+### Для цього вектору: 
+
+* виведіть всі елементи, які не NA; 
+```{r}
 v3 = v2[!is.na(v2)]
 v3
+[1] 1 2 3 4 5
+```
 
-#count mean of vector with (m_wina) and without (m_wona)
+* підрахуйте середнє значення з NA значеннями
+```{r}
 m_wina = mean(v2)
 m_wina
+[1] NA
+```
 
+
+* підрахуйте середнє значення без NA значень
+```{r}
 m_wona = mean(v3)
 m_wona
+[1] 3
+```
