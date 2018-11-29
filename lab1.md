@@ -1,6 +1,7 @@
 # Lab1
 ## Task1
 ### Створити змінні базових (atomic) типів.
+
 * Text
 ```{r}
 ch <- "text"
@@ -26,10 +27,13 @@ compl <-1+4i
 [1] "complex"
 ```
 
-#logical
+* Logical
+```{r}
 bool <- TRUE
+[1] "logical"
+```
 
-#vector with range from 5 to 75
+* Vector with range from 5 to 75
 vec <- 5:75
 
 
