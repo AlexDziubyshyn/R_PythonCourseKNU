@@ -1,0 +1,70 @@
+---
+title: "Lab4"
+author: "Oleksii Dziubyshyn"
+date: "29/11/2018"
+output: html_document
+---
+
+```{r}
+df = read.csv("hw1_data.csv")
+df
+```
+
+
+## Task 1
+### Які назви стовпців файлу даних? 
+```{r}
+colnames(df)
+```
+
+## Task 2
+### Виведіть перші 6 строк фрейму даних.
+```{r}
+df[1:6,]
+```
+
+## Task 3
+### Скільки спостерігань (строк) в дата фреймі?
+```{r}
+nrow(df)
+```
+
+## Task 4
+### Виведіть останні 10 строк дата фрейму.
+```{r}
+tail(df, 10)
+```
+
+## Task 5
+### Як багато значень «NA» в стовпці «Ozone»?
+```{r}
+sum(is.na(df$Ozone))
+```
+
+## Task 6
+### Яке середнє (mean) стовпця «Ozone». Виключити «NA» значення.
+```{r}
+mean(df$Ozone, na.rm=TRUE)
+```
+
+## Task 7
+### Виведіть частину набору даних (subset) зі значенням «Ozone» > 31 та «Temp» > 90. Яке середнє (mean) значень «Solar.R» в цьому наборі даних (subset)?
+```{r}
+df_sb <- subset(df , Ozone > 31 & Temp > 90)
+df_sb
+mean(df_sb$Solar.R)
+```
+
+
+## Task 8
+### Яке середнє значення (mean) для «Temp» для червня («Month» дорівнює 6)?
+```{r}
+colMeans(subset(df, Month == 6))[4]
+```
+
+## Task 9
+### Яке максимальне значення «Ozone» для травня («Month» дорівнює 5)?
+```{r}
+colMax <- function(data) sapply(data, max, na.rm = TRUE)
+colMax(subset(df, Month == 5))[4]
+```
