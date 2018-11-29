@@ -1,12 +1,18 @@
+# Lab1
+## Task1
+### Створити змінні базових (atomic) типів.
+* Text
 ```{r}
 ch <- "text"
 class(ch)
 [1] "character"
 ```
 
+* Numeric
+```{r}
 #numeric
 num <- 3
-
+```
 #integer
 int <- 1L
 
