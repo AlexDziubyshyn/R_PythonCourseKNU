@@ -1,5 +1,5 @@
 # Lab1
-## Task1
+## Task 1
 ### Створити змінні базових (atomic) типів.
 
 * Character
@@ -36,7 +36,7 @@ class(ch)
  [1] "logical"
  ```
  
-## Task2
+## Task 2
 ### Створити вектори, які: 
 * містить послідовність з 5 до 75
  ```{r}
@@ -63,7 +63,7 @@ v_3
 [81] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
 ```
 
-## Task3
+## Task 3
 ### Створити задану матрицю
 * Створити наступну матрицю за допомогою matrix
 ```{r}
@@ -79,32 +79,69 @@ m
 ```{r}
 m <- rbind(c(0.5, 1.3, 3.5), c(3.9, 131,2.8), c(0, 2.2,4.6), c(2,7,5.1))
 ```
-
+## Task 4
+###  Створити довільний список (list), в який включити всі базові типи.
+```{r}
 list<- list(ch,n, i, compl, logical)
-           
+[[1]]
+[1] "text"
+
+[[2]]
+[1] 1
+
+[[3]]
+[1] 1
+
+[[4]]
+[1] 2+2i
+
+[[5]]
+[1] TRUE
+```
+## Task 5
+###  Створити фактор з трьома рівнями «baby», «child», «adult».
+```{r}
 f<- factor(c("baby", "child", "adult"),)
 f
+[1] baby  child adult
+Levels: adult baby child
+```
 
-na_l <-list( 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)
-  counter_na <- function(x){
-    c<- 0;
-    p<- -1;
-    index <-0
-    for(item in x){
-      index<- index+1
-      if(is.na(item)){
-        c <- c+1
-        if(p == -1)
-          p<- index
-      }
-        
-    }
-    
-    
-    c(c,p)## перший аргумент кількість, другий позиція першого
-  }
-  counter_na(na_l)
+## Task 5
+###  Знайти:
+* Індекс першого значення NA в векторі 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11. 
+```r
+v4 <- c(1:4, NA, 6, 7, NA, 9, NA, 11)
+match(NA, v4)
+[1] 5
+```
+
+
+* кількість значень NA.
+```r
+sum(is.na(v4))
+[1] 3
+```
   
-  
-  df <- data.frame(c_1 = 1:4, c_2 = c(T, T, F, F)) 
-  names(df)[1] <- 'New name 1 col'
+ ## Task 7
+### Створити довільний **data frame** та вивести в консоль.
+```r 
+df <- data.frame(c_1 = 1:4, c_2 = c(T, T, F, F)) 
+df
+  c_1   c_2
+1   1  TRUE
+2   2  TRUE
+3   3 FALSE
+4   4 FALSE
+```
+ ## Task 8
+### Змінити імена стовпців цього data frame.
+```r 
+names(df)[1] <- 'New name 1 col'
+df
+  New name 1 col   c_2
+1              1  TRUE
+2              2  TRUE
+3              3 FALSE
+4              4 FALSE
+```
