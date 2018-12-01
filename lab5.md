@@ -49,7 +49,6 @@ complete <- function(directory, id=1:332){
     
     #Додаємо прораховані дані до загального фрейму
     data <- rbind(data, data.frame(paste0(file_name), sum(complete.cases(file))))
-    print()
   }
   return (data)
 }
@@ -74,11 +73,13 @@ sum.complete.cases.file.. <int>
 corr <- function(directory, threshold = 0) {
     corr_vect <- NULL
     for (i in 1:332) {
+    
         #Отримуємо файл
         file <- read.csv(get_file_path(directory, i))
        
         #Рахуємо кількість спорстережень для файлу
         data <- file[complete.cases(file),]
+        
         #Перевіряємо поріг та знаходимо і зберігаємо кореляцію
         if (nrow(data) > threshold){
           corr_vect <- c(corr_vect, cor(data[,"sulfate"], data[, "nitrate"]))
