@@ -92,8 +92,8 @@ corr <- function(directory, threshold = 0) {
 
 Результат роботи:
 ```{r}
-cr <- corr("/Users/alex/Projects/Labs/specdata", 150); head(cr);  summary(cr)
+cr <- corr("/Users/alex/Projects/Labs/specdata", 200); head(cr);  summary(cr)
 [1] -0.01895754 -0.14051254 -0.04389737 -0.06815956 -0.12350667 -0.07588814
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
--0.21057 -0.04999  0.09463  0.12525  0.26844  0.76313 
+-0.21057 -0.04415  0.09914  0.13286  0.26859  0.76313  
 ```
